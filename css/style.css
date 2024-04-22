@@ -188,6 +188,10 @@ body {
 /*-----------------------------------*\
   #common element
  \*-----------------------------------*/
+.section {
+  margin-bottom: 16px;
+}
+
 .container {
   width: 100%;
   max-width: 780px;
@@ -374,4 +378,139 @@ body {
 
 .logo img {
   width: 150px;
+}
+
+/*-----------------------------------*\
+  #Main
+ \*-----------------------------------*/
+main {
+  height: calc(100vh-80px);
+  height: calc(100svh-80px);
+  /* svh 참조 : https://abcdqbbq.tistory.com/104 */
+  overflow: hidden;
+}
+
+article.container {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  overflow-y: overlay;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+article.container::before {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image: car(--gradient-1);
+  z-index: 1;
+}
+
+/*-----------------------------------*\
+  #Current Weather
+ \*-----------------------------------*/
+.current-weather-card .wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.current-weather-card .weather-icon {
+  margin: auto;
+}
+
+.current-weather-card .meta-list {
+  border-top: 1px solid var(--outline);
+  margin-top: 16px;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.current-weather-card .meta-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* .current-weather-card .meta-item:not(:last-child) {
+  margin-bottom: 12px;
+} */
+
+.current-weather-card .meta-text {
+  color: var(--on-surface-variant);
+}
+
+/*-----------------------------------*\
+  #Forecast
+ \*-----------------------------------*/
+.forecast-card .title-2 {
+  margin-block-end: 0;
+}
+
+.forecast-card :is(.card-item, .icon-wrapper) {
+  /* .forecast-card의 자식 중에서 .card-item, .icon-wrapperㅏ 있을 경우 모두 같은 속성 적용 */
+  display: flex;
+  align-items: center;
+}
+
+.forecast-card .icon-wrapper {
+  gap: 0.5rem;
+}
+
+.forecast-card .icon-wrapper .weather-icon {
+  width: 36px;
+}
+
+.forecast-card .card-item:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.forecast-card .card-item > .label-1 {
+  width: 100%;
+  text-align: right;
+  color: var(--on-surface-variant);
+  font-weight: var(--weight-semiBold);
+}
+
+/*-----------------------------------*\
+  #Hightlight
+ \*-----------------------------------*/
+.highlights .m-icon {
+  font-size: 3.2rem;
+}
+
+.highlight-list .title-3 {
+  color: var(--on-surface-variant);
+  margin-bottom: 20px;
+}
+
+.highlights .card-sm {
+  background: var(--black-alpha-10);
+  position: relative;
+}
+
+.highlights .highlight-card :is(.wrapper, .card-list, .card-item) {
+  display: flex;
+  align-items: center;
+}
+
+.highlights .wrapper {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.highlights .card-list {
+  flex-wrap: wrap;
+}
+
+.highlights .card-item {
+  width: 50%;
 }
