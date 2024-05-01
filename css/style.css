@@ -82,6 +82,15 @@
   --transition-short: 100ms ease;
 }
 
+@font-face {
+  font-family: 'abc';
+  src: url('../font/PretendardVariable.woff2') format('woff2');
+}
+
+body {
+  font-family: 'abc';
+}
+
 /*-----------------------------------*\
   #RESET
  \*-----------------------------------*/
@@ -359,8 +368,7 @@ body {
   top: 0;
   width: 100%;
   height: 100vh;
-  /* background: var(--surface); */
-  background: #ddd;
+  background: var(--surface);
   color: var(--on-surface);
   z-index: 999;
   clip-path: circle(4% at calc(100% - 102px) 5%);
@@ -369,8 +377,8 @@ body {
   transition: all 0.5s ease;
 }
 
-.search-view.active{
-  opacity: 1
+.search-view.active {
+  opacity: 1;
   visibility: visible;
   clip-path: circle(130% at 73% 5%);
 }
