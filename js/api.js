@@ -3,7 +3,7 @@ const api_key = '30f79eac8f2abb1b72a3955b3e52147d';
 export const url = {
   //endpoint urls
   currentWeather(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`;
+    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
   },
 
   geocode(loca) {
@@ -11,7 +11,11 @@ export const url = {
   },
 
   forecast(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/forecast?${lat}&${lon}&units=metric`;
+    return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric`;
+  },
+
+  airPollution(lat, lon) {
+    return `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&units=metric`;
   },
 };
 
