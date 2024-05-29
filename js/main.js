@@ -91,6 +91,10 @@ export const updateWeather = function (lat, lon) {
     currentLocationBtn.removeAttribute('disabled');
   }
 
+  const loading = document.querySelector('[data-loading]');
+
+  loading.style.display = 'flex';
+
   const currentWeatherSection = document.querySelector(
     '[data-current-weather]'
   );
@@ -358,6 +362,8 @@ export const updateWeather = function (lat, lon) {
 
       highlightSection.appendChild(card);
     });
+
+    loading.style.display = 'none';
   });
 };
 
